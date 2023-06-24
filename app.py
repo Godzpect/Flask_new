@@ -11,8 +11,10 @@ def hello_world2():
     pass
 @app.route("/test/test")
 def test2():
-    data = request.args.get('x')
-    return "this is a data from input {}".format(data)
+    data1 = int(request.args.get('x'))
+    data2 = int(request.args.get('y'))
+    data3 = data1+data2
+    return "the sum is  {}".format(data3)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0")
